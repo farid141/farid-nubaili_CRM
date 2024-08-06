@@ -16,10 +16,8 @@
                     <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="user-menu d-flex">
                             <div class="user-name text-end me-3">
-                                <h6 class="mb-0 text-gray-600">{{ 'Farid' }}</h6>
-                                {{-- <h6 class="mb-0 text-gray-600">{{ auth()->user()->name }}</h6> --}}
-                                <p class="mb-0 text-sm text-gray-600">{{ 'Admin' }}</p>
-                                {{-- <p class="mb-0 text-sm text-gray-600">{{ auth()->user()->getRoleNames()->first() }}</p> --}}
+                                <h6 class="mb-0 text-gray-600">{{ auth()->user()->name }}</h6>
+                                <p class="mb-0 text-sm text-gray-600">{{ auth()->user()->level }}</p>
                             </div>
                             <div class="user-img d-flex align-items-center">
                                 <div class="avatar avatar-md">
@@ -31,8 +29,7 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton"
                         style="min-width: 11rem;">
                         <li>
-                            <h6 class="dropdown-header">Hello, Farid!</h6>
-                            {{-- <h6 class="dropdown-header">Hello, {{ explode(' ', auth()->user()->name)[0] }}!</h6> --}}
+                            <h6 class="dropdown-header">Hello, {{ explode(' ', auth()->user()->name)[0] }}!</h6>
                         </li>
                         <li>
                             <a class="dropdown-item" href="#">
