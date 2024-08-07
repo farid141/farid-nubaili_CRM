@@ -57,6 +57,12 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+                <li class="sidebar-item  @if ($menu_session == 'Lead') active @endif">
+                    <a href="/lead" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Lead</span>
+                    </a>
+                </li>
 
                 {{-- Administration --}}
                 <li class="sidebar-title">Administration</li>
