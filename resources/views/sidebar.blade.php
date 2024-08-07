@@ -63,6 +63,12 @@
                         <span>Lead</span>
                     </a>
                 </li>
+                <li class="sidebar-item  @if ($menu_session == 'Product') active @endif">
+                    <a href="/product" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Product</span>
+                    </a>
+                </li>
 
                 {{-- Administration --}}
                 <li class="sidebar-title">Administration</li>
