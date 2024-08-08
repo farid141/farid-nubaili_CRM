@@ -36,6 +36,9 @@
 
     <!-- Load the Latest Bootstrap Icons -->
     <link href="/assets/vendors/JqueryIconpicker/css/bootstrapicons-iconpicker.css" rel="stylesheet" />
+
+    {{-- flatpickr --}}
+    <link href="/assets/extensions/flatpickr/flatpickr.css" rel="stylesheet" />
     @stack('styles')
 </head>
 
@@ -72,6 +75,7 @@
         </div>
     </div>
 
+    <script src="/assets/extensions/flatpickr/flatpickr.js"></script>
 
     <!-- zuramai script -->
     <script src="/assets/static/js/components/dark.js"></script>
@@ -181,6 +185,10 @@
                 iconpicker: '<div class="iconpicker"><div class="iconpicker-items"></div></div>',
                 iconpickerItem: '<a role="button" href="javascript:;" class="iconpicker-item"><i></i></a>'
             }
+        });
+
+        flatpickr('input[type="date"]', {
+            dateFormat: "Y-m-d",
         });
 
         $(document).on('click', '.toggle-password', function(e) {
