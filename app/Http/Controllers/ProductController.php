@@ -40,7 +40,7 @@ class ProductController extends Controller
 
         Product::create($validated);
         return Response()->json([
-            'content' => 'product ' . $validated['name'] . ' added!',
+            'content' => 'Product ' . $validated['name'] . ' added!',
             'type' => 'success' // or 'error'
         ]);
     }
@@ -70,7 +70,7 @@ class ProductController extends Controller
         $product->update($validated);
 
         return Response()->json([
-            'content' => 'product updated!',
+            'content' => 'Product updated!',
             'type' => 'success' // or 'error'
         ]);
     }
@@ -83,7 +83,7 @@ class ProductController extends Controller
         $product->delete();
 
         return Response()->json([
-            'content' => 'product ' . $product['name'] . ' deleted!',
+            'content' => 'Product ' . $product['name'] . ' deleted!',
             'type' => 'success' // or 'error'
         ]);
     }

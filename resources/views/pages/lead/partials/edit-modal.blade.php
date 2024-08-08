@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit lead</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Lead</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form id="edit-lead-form" method="POST">
@@ -10,19 +10,17 @@
                 @method('PUT')
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="edit-name">Lead Name:</label>
-                        <input id="edit-name" type="text" placeholder="lead Name" class="form-control" name="name"
-                            required>
+                        <label for="edit-name">Name:</label>
+                        <input id="edit-name" type="text" class="form-control" name="name" required>
                     </div>
                     <div class="mb-3">
                         <label for="edit-contact">Contact:</label>
-                        <input id="edit-contact" type="text" placeholder="contact" class="form-control"
-                            name="contact" required>
+                        <input id="edit-contact" type="text" class="form-control" name="contact" required>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </div>
             </form>
         </div>

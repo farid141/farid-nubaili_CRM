@@ -51,48 +51,33 @@
             <ul class="menu">
                 {{-- MENU --}}
                 <li class="sidebar-title">Menu</li>
-                <li class="sidebar-item  @if ($menu_session == 'dashboard') active @endif">
-                    <a href="/dashboard" class='sidebar-link'>
+                <li class="sidebar-item  @if ($menu_session == 'Dashboard') active @endif">
+                    <a href="/" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-item  @if ($menu_session == 'Lead') active @endif">
                     <a href="/lead" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
+                        <i class="bi bi-file-person"></i>
                         <span>Lead</span>
                     </a>
                 </li>
                 <li class="sidebar-item  @if ($menu_session == 'Product') active @endif">
                     <a href="/product" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
+                        <i class="bi bi-box-seam"></i>
                         <span>Product</span>
                     </a>
                 </li>
                 <li class="sidebar-item  @if ($menu_session == 'Project') active @endif">
                     <a href="/project" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
+                        <i class="bi bi-folder"></i>
                         <span>Project</span>
                     </a>
                 </li>
 
                 {{-- Administration --}}
                 <li class="sidebar-title">Administration</li>
-                <li class="sidebar-item has-sub @if ($menu_session == 'Menu') active @endif">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-stack"></i>
-                        <span>Menu<span>
-                    </a>
-
-                    <ul class="submenu active">
-                        <li class="submenu-item @if ($menu_session == 'Menu') active @endif">
-                            <a href="/menu" class="submenu-link">Menu</a>
-                        </li>
-                        <li class="submenu-item @if ($menu_session == 'Submenu') active @endif">
-                            <a href="/submenu" class="submenu-link">Submenu</a>
-                        </li>
-                    </ul>
-                </li>
                 <li class="sidebar-item  @if ($menu_session == 'User') active @endif">
                     <a href="/user" class='sidebar-link'>
                         <i class="bi bi-person-fill"></i>

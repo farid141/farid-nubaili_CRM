@@ -40,7 +40,7 @@ class LeadController extends Controller
 
         Lead::create($validated);
         return Response()->json([
-            'content' => 'lead ' . $validated['name'] . ' added!',
+            'content' => 'Lead ' . $validated['name'] . ' added!',
             'type' => 'success' // or 'error'
         ]);
     }
@@ -70,7 +70,7 @@ class LeadController extends Controller
         $lead->update($validated);
 
         return Response()->json([
-            'content' => 'lead updated!',
+            'content' => 'Lead ' . $validated['name'] . ' updated!',
             'type' => 'success' // or 'error'
         ]);
     }
@@ -83,7 +83,7 @@ class LeadController extends Controller
         $lead->delete();
 
         return Response()->json([
-            'content' => 'lead ' . $lead['name'] . ' deleted!',
+            'content' => 'Lead ' . $lead['name'] . ' deleted!',
             'type' => 'success' // or 'error'
         ]);
     }

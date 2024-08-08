@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit project</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Project</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form id="edit-project-form" method="POST">
@@ -11,18 +11,16 @@
                 <div class="modal-body">
                     <div class="mb-3" hidden>
                         <label for="edit-sales_id">sales_id:</label>
-                        <input id="edit-sales_id" type="text" placeholder="project sales_id" class="form-control"
-                            name="sales_id" value="{{ auth()->user()->id }}">
+                        <input id="edit-sales_id" type="text" class="form-control" name="sales_id"
+                            value="{{ auth()->user()->id }}">
                     </div>
                     <div class="mb-3">
-                        <label for="edit-name">project Name:</label>
-                        <input id="edit-name" type="text" placeholder="project Name" class="form-control"
-                            name="name" required>
+                        <label for="edit-name">Name:</label>
+                        <input id="edit-name" type="text" class="form-control" name="name" required>
                     </div>
                     <div class="mb-3">
                         <label for="edit-status">Status:</label>
-                        <select id="edit-status" type="text" placeholder="project status" class="form-control"
-                            name="status" required>
+                        <select id="edit-status" type="text" class="form-control" name="status" required>
                             <option value=""></option>
                             @foreach ($status as $state)
                                 <option value="{{ $state }}">{{ $state }}</option>
@@ -31,18 +29,15 @@
                     </div>
                     <div class="mb-3">
                         <label for="edit-desc">Desc:</label>
-                        <input id="edit-desc" type="text" placeholder="desc" class="form-control" name="desc"
-                            required>
+                        <input id="edit-desc" type="text" class="form-control" name="desc" required>
                     </div>
                     <div class="mb-3">
-                        <label for="edit-start_date">start_date:</label>
-                        <input id="edit-start_date" type="date" placeholder="project start_date" class="form-control"
-                            name="start_date" required>
+                        <label for="edit-start_date">Start Date:</label>
+                        <input id="edit-start_date" type="date" class="form-control" name="start_date" required>
                     </div>
                     <div class="mb-3">
                         <label for="edit-manager_id">Manager:</label>
-                        <select id="edit-manager_id" type="text" placeholder="project manager_id"
-                            class="form-control" name="manager_id" required>
+                        <select id="edit-manager_id" type="text" class="form-control" name="manager_id" required>
                             <option value=""></option>
                             @foreach ($managers as $manager)
                                 <option value="{{ $manager->id }}">{{ $manager->name }}</option>
@@ -50,9 +45,8 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="edit-lead_id">lead:</label>
-                        <select id="edit-lead_id" type="text" placeholder="project lead_id" class="form-control"
-                            name="lead_id" required>
+                        <label for="edit-lead_id">Lead:</label>
+                        <select id="edit-lead_id" type="text" class="form-control" name="lead_id" required>
                             <option value=""></option>
                             @foreach ($leads as $lead)
                                 <option value="{{ $lead->id }}">{{ $lead->name }}</option>
@@ -61,8 +55,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="edit-total">Total:</label>
-                        <input id="edit-total" type="number" placeholder="total" class="form-control" name="total"
-                            required>
+                        <input id="edit-total" type="number" class="form-control" name="total" required>
                     </div>
                     <div class="mb-3 details-table" id="edit-details-table">
                         <table class="table">
@@ -83,7 +76,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </div>
             </form>
         </div>

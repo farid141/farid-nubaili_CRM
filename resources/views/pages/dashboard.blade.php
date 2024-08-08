@@ -1,4 +1,4 @@
 @extends('layout')
 @section('content')
-    test
+    Halaman Dashboard
 @endsection

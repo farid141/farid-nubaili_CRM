@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table - Mazer Admin Dashboard</title>
+    <title>CRM - PT Smart</title>
 
     {{-- Zuramai Styles --}}
     <link rel="shortcut icon" href="{{ asset('/assets/compiled/svg/favicon.svg') }}" type="image/x-icon">
@@ -49,12 +49,12 @@
             @include('header')
             <div id="main-content">
                 <div class="page-heading">
-                    <div class="page-title">
+                    <h2 class="page-title">
                         @php
                             use Illuminate\Support\Facades\Session;
                         @endphp
                         {{ Session::get('page_title') }}
-                    </div>
+                    </h2>
                 </div>
 
                 @yield('content')
@@ -62,11 +62,11 @@
                 <footer>
                     <div class="footer clearfix mb-0 text-muted">
                         <div class="float-start">
-                            <p>2023 &copy; Mazer</p>
+                            <p>2024 &copy; PT Smart</p>
                         </div>
                         <div class="float-end">
                             <p>Crafted with <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
-                                by <a href="https://saugi.me">Saugi</a></p>
+                                by <a href="https://linkedin.com/in/farid-nubaili">Farid Nubaili</a></p>
                         </div>
                     </div>
                 </footer>

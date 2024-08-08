@@ -60,7 +60,7 @@ class ProjectController extends Controller
         }
 
         return Response()->json([
-            'content' => 'project ' . $validated['name'] . ' added!',
+            'content' => 'Project ' . $validated['name'] . ' created!',
             'type' => 'success' // or 'error'
         ]);
     }
@@ -128,7 +128,7 @@ class ProjectController extends Controller
         }
 
         return Response()->json([
-            'content' => 'project ' . $validated['name'] . ' added!',
+            'content' => 'Project ' . $validated['name'] . ' updated!',
             'type' => 'success' // or 'error'
         ]);
     }
@@ -141,7 +141,7 @@ class ProjectController extends Controller
         $project->delete();
 
         return Response()->json([
-            'content' => 'project ' . $project['name'] . ' deleted!',
+            'content' => 'Project ' . $project['name'] . ' deleted!',
             'type' => 'success' // or 'error'
         ]);
     }

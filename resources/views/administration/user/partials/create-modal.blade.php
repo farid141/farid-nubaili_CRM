@@ -2,20 +2,20 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Create user</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Create User</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form id="create-user-form" method="POST">
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="create-name">User Name:</label>
-                        <input id="create-name" type="text" placeholder="User Name" class="form-control"
-                            name="name" required>
+                        <label for="create-name">Name:</label>
+                        <input id="create-name" type="text" class="form-control" name="name" required>
                     </div>
                     <div class="mb-3">
                         <label for="create-level">level:</label>
                         <select name="level" id="create-level" class="form-select">
+                            <option value=""></option>
                             @foreach ($levels as $level)
                                 <option value="{{ $level }}">{{ $level }}</option>
                             @endforeach
@@ -23,14 +23,13 @@
                     </div>
                     <div class="mb-3">
                         <label for="create-email">Email:</label>
-                        <input id="create-email" type="email" placeholder="Email" class="form-control" name="email"
-                            required>
+                        <input id="create-email" type="email" class="form-control" name="email" required>
                     </div>
                     <div class="mb-3">
                         <label for="create-password">Password:</label>
                         <div class="input-group">
-                            <input id="create-password" type="password" placeholder="Password"
-                                class="form-control password" name="password" required>
+                            <input id="create-password" type="password" class="form-control password" name="password"
+                                required>
                             <span class="input-group-text toggle-password" style="cursor: pointer">
                                 <i class="bi bi-eye-slash" id="toggleIcon"></i>
                             </span>
@@ -39,8 +38,8 @@
                     <div class="mb-3">
                         <label for="create-password_confirmation">Confirm Password:</label>
                         <div class="input-group">
-                            <input id="create-password_confirmation" type="password" placeholder="Confirm Password"
-                                class="form-control password" name="password_confirmation" required>
+                            <input id="create-password_confirmation" type="password" class="form-control password"
+                                name="password_confirmation" required>
                             <span class="input-group-text toggle-password" style="cursor: pointer">
                                 <i class="bi bi-eye-slash" id="toggleIcon"></i>
                             </span>
@@ -50,7 +49,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Create</button>
                 </div>
             </form>
         </div>
