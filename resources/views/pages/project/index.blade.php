@@ -3,6 +3,9 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create-project-modal">
         Add project
     </button>
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#filter-project-modal">
+        Filter
+    </button>
 
     <table class="table table-bordered datatable">
         <thead>
@@ -23,9 +26,9 @@
         <tbody>
         </tbody>
     </table>
-
     @include('pages.project.partials.create-modal')
     @include('pages.project.partials.edit-modal')
+    @include('pages.project.partials.filter-modal')
 @endsection
 
 @push('scripts')
@@ -34,10 +37,12 @@
         var managers = @json($managers);
         var leads = @json($leads);
         var dt = null;
+        let queryString = window.location.href;
+
         // Datatable definition
         dt = $('.datatable').DataTable({
             ajax: {
-                url: '{!! route('project.index') !!}',
+                url: queryString,
                 dataSrc: ''
             },
             columns: [{

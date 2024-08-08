@@ -23,15 +23,16 @@ class ProjectController extends Controller
      */
     public function index(Request $request)
     {
-        $projects = Project::with(['manager', 'lead', 'sales'])->get();
+        $projects = Project::with(['manager', 'lead', 'sales'])->filter($request)->get();
         if (request()->ajax()) {
             return $projects;
         }
         $products = Product::all();
         $managers = User::where('level', 'Manager')->get();
+        $sales = User::where('level', 'Sales')->get();
         $leads = Lead::all();
         $status = ['pending', 'approved', 'rejected'];
-        return view('pages.project.index', compact('projects', 'products', 'managers', 'leads', 'status'));
+        return view('pages.project.index', compact('projects', 'products', 'managers', 'leads', 'status', 'sales'));
     }
 
     /**
