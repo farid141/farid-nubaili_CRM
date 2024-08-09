@@ -21,6 +21,7 @@
 
     @include('pages.lead.partials.create-modal')
     @include('pages.lead.partials.edit-modal')
+    @include('pages.lead.partials.show-modal')
 @endsection
 
 @push('scripts')
@@ -60,6 +61,11 @@
                                     data-bs-target="#edit-lead-modal" data-id=":id">
                                     <i class="bi bi-pencil"></i>
                                 </button>`.replace(':id', row.id);
+                        const btn_show =
+                            `<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#show-lead-modal" data-id=":id">
+                                <i class="bi bi-eye"></i>
+                            </button>`.replace(':id', row.id);
                         const btn_delete =
                             `<form action="" class="d-inline delete-lead-form" data-id=":id">
                                     @csrf
@@ -68,7 +74,7 @@
                                         <i class="bi bi-x"></i>
                                     </button>
                                 </form>`.replace(':id', row.id);
-                        return `${btn_edit} ${btn_delete}`;
+                        return `${btn_edit} ${btn_show} ${btn_delete}`;
                     },
                 },
             ]
@@ -95,6 +101,48 @@
                 }
             });
         });
+
+        // MODAL SHOW lead SHOWN
+        $('#show-lead-modal').on('shown.bs.modal', (e) => {
+            var id = $(e.relatedTarget).data('id');
+            var url = "{{ route('lead.show', ['lead' => ':id']) }}".replace(':id', id);
+            $('#show-lead-form').attr('data-id', id); //set form's data-id
+
+            $.ajax({
+                type: "GET",
+                url: url,
+                success: function(response) {
+                    $('#show-lead-form [id="show-name"]').val(response[0].lead_name);
+                    $('#show-lead-form [id="show-contact"]').val(response[0].contact);
+                    populateTable(response, '#show-product-table tbody');
+                },
+                error: function(response) {
+                    showToast({
+                        content: 'server error',
+                        type: 'error'
+                    });
+                }
+            });
+        });
+
+        function populateTable(details, tbodySelector) {
+            const table = $(tbodySelector);
+            table.empty(); // Clear existing data
+
+            // Build the entire table structure as a string
+            let tableContent = ``;
+
+            details.forEach(detail => {
+                tableContent += `
+                <tr>
+                    <td>${detail['product_name']}</td>
+                    <td>${detail['quantity']}</td>
+                </tr>`;
+            });
+
+            // Append the complete table structure to the table element
+            table.append(tableContent);
+        }
 
         // DELETE lead SUBMITTED
         // HARUS EVENT DELEGATION

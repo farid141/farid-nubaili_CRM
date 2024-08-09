@@ -28,6 +28,12 @@ class LeadController extends Controller
         return view('pages.lead.index', compact('leads'));
     }
 
+    public function Show(Lead $lead)
+    {
+        $lead = Lead::products($lead->id);
+        return Response()->json($lead);
+    }
+
     /**
      * Store a newly created resource in storage.
      */

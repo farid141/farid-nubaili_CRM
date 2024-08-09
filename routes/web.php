@@ -15,7 +15,7 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
     Route::resource('/user', UserController::class)->except(['show', 'create']);
-    Route::resource('/lead', LeadController::class)->except(['show', 'create']);
+    Route::resource('/lead', LeadController::class)->except(['create']);
     Route::resource('/product', ProductController::class)->except(['show', 'create']);
     Route::resource('/project', ProjectController::class)->except(['create']);
 });
