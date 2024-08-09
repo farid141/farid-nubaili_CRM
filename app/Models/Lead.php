@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class Lead extends Model
@@ -28,5 +30,17 @@ class Lead extends Model
             ->groupBy('l.name', 'l.contact', 'p2.name')
             ->get();
         return $products;
+    }
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
+
+    public function scopeFilter(Builder $query, Request $request): void
+    {
+        $query->when($request['have_product'] ?? false, function ($query) {
+            return $query->whereHas('projects.details.product');
+        });
     }
 }

@@ -3,6 +3,9 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create-lead-modal">
         Add Lead
     </button>
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#filter-lead-modal">
+        Filter
+    </button>
 
     <table class="table table-bordered datatable">
         <thead>
@@ -22,15 +25,18 @@
     @include('pages.lead.partials.create-modal')
     @include('pages.lead.partials.edit-modal')
     @include('pages.lead.partials.show-modal')
+    @include('pages.lead.partials.filter-modal')
 @endsection
 
 @push('scripts')
     <script>
         var dt = null;
+        let queryString = window.location.href;
+
         // Datatable definition
         dt = $('.datatable').DataTable({
             ajax: {
-                url: '{!! route('lead.index') !!}',
+                url: queryString,
                 dataSrc: ''
             },
             columns: [{

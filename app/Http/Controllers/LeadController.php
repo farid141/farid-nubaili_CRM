@@ -17,9 +17,9 @@ class LeadController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $leads = Lead::all();
+        $leads = Lead::filter($request)->get();
         if (request()->ajax()) {
             return $leads;
         }
