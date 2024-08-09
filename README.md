@@ -21,6 +21,10 @@ Beberapa fitur yang yang ada:
 -   Filter halaman project by sales, manager, lead, status, etc.
 -   Halaman customer yang sudah berlangganan disertai list layanannya (bisa melakukan filter di halaman lead).
 
+### Demo Video
+
+Link Demo: https://youtu.be/R9AW87ryWxY
+
 ## Database Schema
 
 Skema database dapat dilihat pada documentation/database schema.png.
