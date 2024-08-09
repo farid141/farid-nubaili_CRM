@@ -173,7 +173,9 @@
 
         // delete row detail clicked
         $(document).on('click', '.delete-detail', function() {
+            var uploadForm = $(this).closest('form'); //Get form selector before deleting DOM object
             $(this).closest('tr').remove();
+            calculateTotal(uploadForm);
         });
 
         // add row detail clicked

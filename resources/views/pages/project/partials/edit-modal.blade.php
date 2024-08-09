@@ -57,7 +57,7 @@
                         <label for="edit-total">Total:</label>
                         <input id="edit-total" type="number" class="form-control" name="total" required>
                     </div>
-                    <div class="mb-3 details-table" id="edit-details-table">
+                    <div class="mb-3 details-table" id="edit-details-table" style="overflow-y: hidden;">
                         <table class="table">
                             <thead>
                                 <tr>

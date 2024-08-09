@@ -56,7 +56,7 @@
                         <label for="create-total">Total:</label>
                         <input id="create-total" type="number" class="form-control" name="total" required>
                     </div>
-                    <div class="mb-3 details-table" id="create-details-table">
+                    <div class="mb-3 details-table" id="create-details-table" style="overflow-y: hidden;">
                         <table class="table">
                             <thead>
                                 <tr>
