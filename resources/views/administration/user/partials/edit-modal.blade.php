@@ -42,7 +42,7 @@
         $('#edit-user-form').submit(function(e) {
             e.preventDefault();
             var formData = new FormData(this);
-            var id = $(this).data('id');
+            var id = $(this).attr('data-id');
             var url = "{{ route('user.update', ['user' => ':id']) }}".replace(':id', id);
             var formElement = $(this);
             removeErrorMessages(formElement);

@@ -95,7 +95,7 @@
                     formData.append(key, value);
                 }
             });
-            var id = $(this).data('id');
+            var id = $(this).attr('data-id');
             var url = "{{ route('project.update', ['project' => ':id']) }}".replace(':id', id);
             var formElement = $(this);
             removeErrorMessages(formElement);

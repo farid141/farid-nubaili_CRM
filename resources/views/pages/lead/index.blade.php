@@ -7,20 +7,22 @@
         Filter
     </button>
 
-    <table class="table table-bordered datatable">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Contact</th>
-                <th>Created at</th>
-                <th>Updated at</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+    <div style="overflow-y: hidden">
+        <table class="table table-bordered datatable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Created at</th>
+                    <th>Updated at</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
 
     @include('pages.lead.partials.create-modal')
     @include('pages.lead.partials.edit-modal')
@@ -41,6 +43,9 @@
             },
             columns: [{
                     data: null,
+                    createdCell: function(td, cellData, rowData, row, col) {
+                        $(td).addClass('text-nowrap');
+                    },
                     width: 20,
                     render: (data, type, row, meta) => {
                         return meta.row + 1;
@@ -48,19 +53,35 @@
                     orderable: true,
                 },
                 {
-                    data: 'name'
+                    data: 'name',
+                    createdCell: function(td, cellData, rowData, row, col) {
+                        $(td).addClass('text-nowrap');
+                    },
                 },
                 {
-                    data: 'contact'
+                    data: 'contact',
+                    createdCell: function(td, cellData, rowData, row, col) {
+                        $(td).addClass('text-nowrap');
+                    }
                 },
                 {
-                    data: 'created_at'
+                    data: 'created_at',
+                    createdCell: function(td, cellData, rowData, row, col) {
+                        $(td).addClass('text-nowrap');
+                    },
+
                 },
                 {
-                    data: 'updated_at'
+                    data: 'updated_at',
+                    createdCell: function(td, cellData, rowData, row, col) {
+                        $(td).addClass('text-nowrap');
+                    },
                 },
                 {
                     data: 'id',
+                    createdCell: function(td, cellData, rowData, row, col) {
+                        $(td).addClass('text-nowrap');
+                    },
                     render: (data, type, row, meta) => {
                         const btn_edit =
                             `<button type="button" class="btn btn-warning" data-bs-toggle="modal"
